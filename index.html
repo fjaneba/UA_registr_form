@@ -2,11 +2,8 @@
 <html lang="cs">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
-    <title>Реєстрація на інформаційну зустріч</title>
-    <meta name="mobile-web-app-capable" content="yes">
-    <meta name="apple-mobile-web-app-capable" content="yes">
-    <meta name="apple-mobile-web-app-status-bar-style" content="default">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registrace na informační schůzku</title>
     <style>
 * {
     margin: 0;
@@ -14,35 +11,28 @@
     box-sizing: border-box;
 }
 
-html {
-    -webkit-text-size-adjust: 100%;
-    -ms-text-size-adjust: 100%;
-}
-
 body {
-    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', system-ui, Roboto, 'Helvetica Neue', Arial, sans-serif;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
     background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
     min-height: 100vh;
-    padding: 10px;
+    padding: 20px;
     line-height: 1.6;
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
 }
 
 .container {
     max-width: 800px;
     margin: 0 auto;
     background: white;
-    border-radius: 15px;
-    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+    border-radius: 20px;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
     overflow: hidden;
-    animation: fadeInUp 0.6s ease-out;
+    animation: fadeInUp 0.8s ease-out;
 }
 
 @keyframes fadeInUp {
     from {
         opacity: 0;
-        transform: translateY(20px);
+        transform: translateY(30px);
     }
     to {
         opacity: 1;
@@ -53,58 +43,53 @@ body {
 .form-header {
     background: linear-gradient(135deg, #4a90e2 0%, #357abd 100%);
     color: white;
-    padding: 30px 20px;
+    padding: 40px 30px;
     text-align: center;
     transition: background 0.3s ease;
 }
 
+/* Oranžová hlavička pro zkrácený formulář */
 .form-header.orange {
     background: linear-gradient(135deg, #ff8c42 0%, #e67e22 100%);
 }
 
 .form-header h1 {
-    font-size: 1.8em;
+    font-size: 2.2em;
     font-weight: 600;
     margin-bottom: 10px;
-    line-height: 1.2;
 }
 
 .form-header p {
-    font-size: 1em;
-    opacity: 0.95;
-    line-height: 1.4;
+    font-size: 1.1em;
+    opacity: 0.9;
 }
 
 .registration-form {
-    padding: 25px 20px;
+    padding: 40px 30px;
 }
 
 .form-section {
-    margin-top: 30px;
-    padding-top: 25px;
+    margin-top: 40px;
+    padding-top: 30px;
     border-top: 2px solid #e8f4f8;
-}
-
-.form-section:first-child {
-    margin-top: 0;
-    padding-top: 0;
-    border-top: none;
 }
 
 .form-section h3 {
     color: #2c3e50;
-    font-size: 1.3em;
+    font-size: 1.4em;
     margin-bottom: 20px;
     font-weight: 600;
 }
 
 .form-row {
-    display: block;
-    margin-bottom: 0;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+    margin-bottom: 25px;
 }
 
 .form-group {
-    margin-bottom: 20px;
+    margin-bottom: 25px;
 }
 
 .form-group label {
@@ -116,41 +101,27 @@ body {
 }
 
 .form-group input,
-.form-group select,
-.form-group textarea {
+.form-group select {
     width: 100%;
     padding: 14px 16px;
     border: 2px solid #e1e8ed;
-    border-radius: 10px;
+    border-radius: 12px;
     font-size: 16px;
     transition: all 0.3s ease;
     background: #fafbfc;
-    font-family: inherit;
-    -webkit-appearance: none;
-    -moz-appearance: none;
-    appearance: none;
-}
-
-.form-group select {
-    background-image: url('data:image/svg+xml;charset=US-ASCII,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 4 5"><path fill="%23666" d="M2 0L0 2h4zm0 5L0 3h4z"/></svg>');
-    background-repeat: no-repeat;
-    background-position: right 12px center;
-    background-size: 12px;
-    padding-right: 40px;
 }
 
 .form-group input:focus,
-.form-group select:focus,
-.form-group textarea:focus {
+.form-group select:focus {
     outline: none;
     border-color: #4a90e2;
     background: white;
     box-shadow: 0 0 0 3px rgba(74, 144, 226, 0.1);
+    transform: translateY(-1px);
 }
 
 .form-group input:hover,
-.form-group select:hover,
-.form-group textarea:hover {
+.form-group select:hover {
     border-color: #b8d4f1;
     background: white;
 }
@@ -159,67 +130,34 @@ body {
     background-color: #f5f5f5;
     color: #999;
     cursor: not-allowed;
-    opacity: 0.7;
-}
-
-.form-group textarea {
-    min-height: 80px;
-    resize: vertical;
-}
-
-.other-input {
-    margin-top: 15px;
-    display: none;
-    opacity: 0;
-    transform: translateY(-10px);
-    transition: all 0.3s ease;
-}
-
-.other-input.show {
-    display: block;
-    opacity: 1;
-    transform: translateY(0);
-}
-
-.other-input label {
-    font-size: 0.9em;
-    color: #666;
-    margin-bottom: 5px;
 }
 
 .form-actions {
-    margin-top: 30px;
+    margin-top: 40px;
     text-align: center;
 }
 
 .submit-btn {
-    background: #bdc3c7;
+    background: linear-gradient(135deg, #4a90e2 0%, #357abd 100%);
     color: white;
     border: none;
-    padding: 16px 32px;
+    padding: 16px 40px;
     font-size: 1.1em;
     font-weight: 600;
     border-radius: 50px;
-    cursor: not-allowed;
+    cursor: pointer;
     transition: all 0.3s ease;
-    width: 100%;
-    max-width: 300px;
+    min-width: 200px;
     position: relative;
     overflow: hidden;
-    -webkit-tap-highlight-color: transparent;
 }
 
-.submit-btn.active {
-    background: linear-gradient(135deg, #4a90e2 0%, #357abd 100%);
-    cursor: pointer;
+.submit-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 10px 25px rgba(74, 144, 226, 0.3);
 }
 
-.submit-btn.active:hover {
-    transform: translateY(-1px);
-    box-shadow: 0 5px 15px rgba(74, 144, 226, 0.3);
-}
-
-.submit-btn.active:active {
+.submit-btn:active {
     transform: translateY(0);
 }
 
@@ -228,6 +166,10 @@ body {
     cursor: not-allowed;
     transform: none;
     box-shadow: none;
+}
+
+.btn-loading {
+    display: inline-block;
 }
 
 .btn-loading::after {
@@ -248,9 +190,9 @@ body {
 
 .success-message,
 .error-message {
-    margin: 20px;
-    padding: 20px;
-    border-radius: 10px;
+    margin: 30px;
+    padding: 25px;
+    border-radius: 12px;
     text-align: center;
     animation: slideIn 0.5s ease-out;
 }
@@ -267,7 +209,7 @@ body {
 
 .success-message h3,
 .error-message h3 {
-    font-size: 1.2em;
+    font-size: 1.3em;
     margin-bottom: 10px;
 }
 
@@ -282,109 +224,45 @@ body {
     }
 }
 
+/* Skrytí sekce termínů */
 .form-section.hidden {
     display: none;
 }
 
-.registration-form.hidden {
-    display: none;
-}
-
-.form-group input.invalid,
-.form-group select.invalid,
-.form-group textarea.invalid {
-    border-color: #e74c3c;
-    background-color: #fdf2f2;
-}
-
-.form-group input.valid,
-.form-group select.valid,
-.form-group textarea.valid {
-    border-color: #27ae60;
-}
-
-.loading-overlay {
-    position: fixed;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background: rgba(255, 255, 255, 0.9);
-    display: none;
-    justify-content: center;
-    align-items: center;
-    z-index: 1000;
-}
-
-.loading-spinner {
-    width: 40px;
-    height: 40px;
-    border: 4px solid #f3f3f3;
-    border-top: 4px solid #4a90e2;
-    border-radius: 50%;
-    animation: spin 1s linear infinite;
-}
-
-@media (min-width: 769px) {
-    body {
-        padding: 20px;
-    }
-    
+/* Responsive design */
+@media (max-width: 768px) {
     .container {
-        border-radius: 20px;
+        margin: 10px;
+        border-radius: 15px;
     }
     
     .form-header {
-        padding: 40px 30px;
+        padding: 30px 20px;
     }
     
     .form-header h1 {
-        font-size: 2.2em;
-    }
-    
-    .form-header p {
-        font-size: 1.1em;
+        font-size: 1.8em;
     }
     
     .registration-form {
-        padding: 40px 30px;
+        padding: 30px 20px;
     }
     
     .form-row {
-        display: grid;
-        grid-template-columns: 1fr 1fr;
-        gap: 20px;
-        margin-bottom: 25px;
-    }
-    
-    .form-group {
-        margin-bottom: 25px;
-    }
-    
-    .form-section {
-        margin-top: 40px;
-        padding-top: 30px;
-    }
-    
-    .form-actions {
-        margin-top: 40px;
-    }
-    
-    .submit-btn {
-        width: auto;
-        min-width: 200px;
+        grid-template-columns: 1fr;
+        gap: 0;
     }
     
     .success-message,
     .error-message {
-        margin: 30px;
-        padding: 25px;
+        margin: 20px;
+        padding: 20px;
     }
 }
 
-@media (max-width: 380px) {
+@media (max-width: 480px) {
     body {
-        padding: 5px;
+        padding: 10px;
     }
     
     .form-header h1 {
@@ -392,44 +270,20 @@ body {
     }
     
     .form-header p {
-        font-size: 0.9em;
+        font-size: 1em;
     }
     
-    .registration-form {
-        padding: 20px 15px;
-    }
-    
-    .form-group input,
-    .form-group select,
-    .form-group textarea {
-        padding: 12px 14px;
-        font-size: 16px;
-    }
-}
-
-@media (hover: none) and (pointer: coarse) {
-    .submit-btn.active:hover {
-        transform: none;
-        box-shadow: none;
-    }
-    
-    .form-group input:hover,
-    .form-group select:hover,
-    .form-group textarea:hover {
-        border-color: #e1e8ed;
-        background: #fafbfc;
+    .submit-btn {
+        width: 100%;
+        padding: 14px 20px;
     }
 }
     </style>
 </head>
 <body>
-    <div class="loading-overlay" id="loadingOverlay">
-        <div class="loading-spinner"></div>
-    </div>
-
     <div class="container">
         <div class="form-header" id="formHeader">
-            <h1 id="headerTitle">Реєстрація на інформаційну зустріч</h1>
+            <h1 id="headerTitle">Registrace na informační schůzku</h1>
             <p id="headerSubtitle">Projekt: Podpora zapojení osob ukrajinské národnosti na trhu práce II</p>
         </div>
 
@@ -437,22 +291,22 @@ body {
             <div class="form-row">
                 <div class="form-group">
                     <label for="jmeno">Jméno *</label>
-                    <input type="text" id="jmeno" name="jmeno" required autocomplete="given-name">
+                    <input type="text" id="jmeno" name="jmeno" required>
                 </div>
                 <div class="form-group">
                     <label for="prijmeni">Příjmení *</label>
-                    <input type="text" id="prijmeni" name="prijmeni" required autocomplete="family-name">
+                    <input type="text" id="prijmeni" name="prijmeni" required>
                 </div>
             </div>
 
             <div class="form-row">
                 <div class="form-group">
                     <label for="telefon">Telefon *</label>
-                    <input type="tel" id="telefon" name="telefon" required autocomplete="tel">
+                    <input type="tel" id="telefon" name="telefon" required>
                 </div>
                 <div class="form-group">
                     <label for="mail">Email *</label>
-                    <input type="email" id="mail" name="mail" required autocomplete="email">
+                    <input type="email" id="mail" name="mail" required>
                 </div>
             </div>
 
@@ -462,12 +316,8 @@ body {
                     <option value="">-- Vyberte možnost --</option>
                     <option value="ANO">ANO</option>
                     <option value="NE">NE</option>
-                    <option value="Jiné">Jiná odpověď</option>
+                    <option value="Jiné">Jiné</option>
                 </select>
-                <div class="other-input" id="docasna_ochrana_other">
-                    <label for="docasna_ochrana_text">Prosím, specifikujte:</label>
-                    <textarea id="docasna_ochrana_text" name="docasna_ochrana_text" placeholder="Zadejte svou odpověď..."></textarea>
-                </div>
             </div>
 
             <div class="form-group">
@@ -476,12 +326,8 @@ body {
                     <option value="">-- Vyberte možnost --</option>
                     <option value="ANO">ANO</option>
                     <option value="NE">NE</option>
-                    <option value="Jiné">Jiná odpověď</option>
+                    <option value="Jiné">Jiné</option>
                 </select>
-                <div class="other-input" id="registrace_other">
-                    <label for="registrace_text">Prosím, specifikujte:</label>
-                    <textarea id="registrace_text" name="registrace_text" placeholder="Zadejte svou odpověď..."></textarea>
-                </div>
             </div>
 
             <div class="form-group">
@@ -491,12 +337,8 @@ body {
                     <option value="Ne">Ne, nyní nemám zaměstnání, nepracuji</option>
                     <option value="Ano, pracuji, mám PS">Ano, pracuji, mám Pracovní smlouvu</option>
                     <option value="Ano, pracuji a mám DPP nebo DPČ">Ano, pracuji a mám Dohodu o provedení práce nebo Dohodu o pracovní činnosti</option>
-                    <option value="Jiné">Jiná odpověď</option>
+                    <option value="Jiné">Jiné</option>
                 </select>
-                <div class="other-input" id="prace_other">
-                    <label for="prace_text">Prosím, specifikujte:</label>
-                    <textarea id="prace_text" name="prace_text" placeholder="Zadejte svou odpověď..."></textarea>
-                </div>
             </div>
 
             <div class="form-section" id="dateSection">
@@ -526,15 +368,16 @@ body {
             </div>
 
             <div class="form-actions">
-                <button type="submit" id="submitBtn" class="submit-btn" disabled>
-                    <span class="btn-text" id="btnText">Odeslat</span>
+                <button type="submit" id="submitBtn" class="submit-btn">
+                    <span class="btn-text" id="btnText">Odeslat registraci</span>
+                    <span class="btn-loading" style="display: none;">Odesílání...</span>
                 </button>
             </div>
         </form>
 
         <div id="successMessage" class="success-message" style="display: none;">
-            <h3>✓ <span id="successTitle">Реєстрація була успішною!</span></h3>
-            <p id="successText">На вашу електронну пошту було надіслано підтвердження з деталями зустрічі.</p>
+            <h3>✓ <span id="successTitle">Registrace byla úspěšná!</span></h3>
+            <p id="successText">Na váš email byl odeslán potvrzovací email s podrobnostmi o schůzce.</p>
         </div>
 
         <div id="errorMessage" class="error-message" style="display: none;">
@@ -544,736 +387,399 @@ body {
     </div>
 
     <script>
-// Minimální, robustní JavaScript pro maximální kompatibilitu
-try {
-    var isInterestOnlyMode = false;
-    var isLoading = false;
+let isInterestOnlyMode = false; // Globální proměnná pro sledování režimu
 
-    // Detekce Google Apps Script prostředí
-    var isGASEnvironment = typeof google !== 'undefined' && google.script && google.script.run;
+document.addEventListener('DOMContentLoaded', function() {
+    // Načteme dostupné termíny při načtení stránky
+    loadAvailableDates();
     
-    // Mock pro testování
-    var mockGoogleScript = {
-        run: {
-            withSuccessHandler: function(successCallback) {
-                return {
-                    withFailureHandler: function(failureCallback) {
-                        return {
-                            getAvailableDates: function() {
-                                setTimeout(function() {
-                                    var mockDates = [
-                                        {
-                                            date: '15.03.2025',
-                                            autoFill: true,
-                                            time: '10:00',
-                                            place: 'Praha - Václavské náměstí 1'
-                                        },
-                                        {
-                                            date: '20.03.2025',
-                                            autoFill: false
-                                        }
-                                    ];
-                                    successCallback(mockDates);
-                                }, 1000);
-                            },
-                            getTimesForDate: function(date) {
-                                setTimeout(function() {
-                                    if (date === '20.03.2025') {
-                                        successCallback(['09:00', '11:00', '14:00', '16:00']);
-                                    }
-                                }, 500);
-                            },
-                            getPlacesForDateTime: function(date, time) {
-                                setTimeout(function() {
-                                    successCallback(['Praha - Václavské náměstí 1', 'Brno - Svobody náměstí 5']);
-                                }, 500);
-                            },
-                            saveRegistration: function(data) {
-                                setTimeout(function() {
-                                    successCallback({ success: true });
-                                }, 1500);
-                            }
-                        };
+    // Event listener pro změnu datumu
+    document.getElementById('datum').addEventListener('change', onDateChange);
+    
+    // Event listener pro změnu času
+    document.getElementById('cas').addEventListener('change', onTimeChange);
+    
+    // Event listener pro odeslání formuláře
+    document.getElementById('registrationForm').addEventListener('submit', function(e) {
+        e.preventDefault();
+        submitForm();
+    });
+});
+
+// Načtení dostupných termínů
+function loadAvailableDates() {
+    const datumSelect = document.getElementById('datum');
+    datumSelect.innerHTML = '<option value="">-- Načítání... --</option>';
+    
+    google.script.run
+        .withSuccessHandler(function(datesWithDetails) {
+            if (datesWithDetails.length === 0) {
+                // Žádné termíny - přepneme na zkrácený formulář
+                switchToInterestOnlyMode();
+            } else {
+                // Máme termíny - zobrazíme plný formulář
+                switchToFullMode();
+                datumSelect.innerHTML = '<option value="">-- Vyberte datum --</option>';
+                datesWithDetails.forEach(function(dateObj) {
+                    const option = document.createElement('option');
+                    option.value = dateObj.date;
+                    option.textContent = dateObj.date;
+                    // Uložíme dodatečné informace jako data atributy
+                    option.setAttribute('data-auto-fill', dateObj.autoFill);
+                    if (dateObj.autoFill) {
+                        option.setAttribute('data-time', dateObj.time);
+                        if (dateObj.place) {
+                            option.setAttribute('data-place', dateObj.place);
+                        }
                     }
-                };
-            }
-        }
-    };
-
-    var googleAPI = isGASEnvironment ? google : mockGoogleScript;
-
-    // Funkce pro inicializaci
-    function initializeForm() {
-        console.log('Inicializace formuláře...');
-        
-        try {
-            setupEventListeners();
-            setupValidation();
-            setupOtherOptions();
-            loadAvailableDates();
-            console.log('Formulář inicializován úspěšně');
-        } catch (error) {
-            console.error('Chyba při inicializaci:', error);
-            showError('Chyba při načítání formuláře. Zkuste obnovit stránku.');
-        }
-    }
-
-    function setupEventListeners() {
-        var form = document.getElementById('registrationForm');
-        var datumSelect = document.getElementById('datum');
-        var casSelect = document.getElementById('cas');
-
-        if (form) {
-            form.addEventListener('submit', handleFormSubmit);
-        }
-
-        if (datumSelect) {
-            datumSelect.addEventListener('change', onDateChange);
-        }
-
-        if (casSelect) {
-            casSelect.addEventListener('change', onTimeChange);
-        }
-    }
-
-    function setupValidation() {
-        var formElements = [
-            'jmeno', 'prijmeni', 'telefon', 'mail', 
-            'docasna_ochrana', 'registrace', 'prace',
-            'datum', 'cas', 'misto'
-        ];
-        
-        for (var i = 0; i < formElements.length; i++) {
-            var element = document.getElementById(formElements[i]);
-            if (element) {
-                element.addEventListener('input', checkFormValidity);
-                element.addEventListener('change', checkFormValidity);
-                element.addEventListener('blur', function() {
-                    validateField(this);
+                    datumSelect.appendChild(option);
                 });
             }
-        }
-    }
+        })
+        .withFailureHandler(function(error) {
+            console.error('Chyba při načítání termínů:', error);
+            datumSelect.innerHTML = '<option value="">-- Chyba při načítání --</option>';
+            showError('Nepodařilo se načíst dostupné termíny. Zkuste obnovit stránku.');
+        })
+        .getAvailableDates();
+}
 
-    function setupOtherOptions() {
-        var fieldsWithOther = ['docasna_ochrana', 'registrace', 'prace'];
-        
-        for (var i = 0; i < fieldsWithOther.length; i++) {
-            var fieldId = fieldsWithOther[i];
-            var selectElement = document.getElementById(fieldId);
-            if (selectElement) {
-                selectElement.addEventListener('change', createOtherOptionHandler(fieldId));
-            }
-        }
-    }
+// Přepnutí na zkrácený formulář (bez termínů)
+function switchToInterestOnlyMode() {
+    isInterestOnlyMode = true;
+    
+    // Změníme hlavičku na oranžovou
+    const header = document.getElementById('formHeader');
+    header.classList.add('orange');
+    
+    // Změníme text hlavičky
+    document.getElementById('headerTitle').textContent = 'Zájem o projekt';
+    document.getElementById('headerSubtitle').textContent = 'V současné době není vypsán termín hromadné informační schůzky. Pokud máte zájem o účast v projektu, vyplňte níže uvedené údaje a my vás budeme kontaktovat.';
+    
+    // Skryjeme sekci s termíny
+    const dateSection = document.getElementById('dateSection');
+    dateSection.classList.add('hidden');
+    
+    // Změníme text tlačítka
+    document.getElementById('btnText').textContent = 'Odeslat zájem o kontakt';
+    
+    // Odebereme required atributy z polí termínů
+    document.getElementById('datum').removeAttribute('required');
+    document.getElementById('cas').removeAttribute('required');
+    document.getElementById('misto').removeAttribute('required');
+}
 
-    function createOtherOptionHandler(fieldId) {
-        return function(e) {
-            handleOtherOption(e, fieldId);
-        };
-    }
+// Přepnutí na plný formulář (s termíny)
+function switchToFullMode() {
+    isInterestOnlyMode = false;
+    
+    // Vrátíme modrou hlavičku
+    const header = document.getElementById('formHeader');
+    header.classList.remove('orange');
+    
+    // Vrátíme původní text hlavičky
+    document.getElementById('headerTitle').textContent = 'Registrace na informační schůzku';
+    document.getElementById('headerSubtitle').textContent = 'Projekt: Podpora zapojení osob ukrajinské národnosti na trhu práce II';
+    
+    // Zobrazíme sekci s termíny
+    const dateSection = document.getElementById('dateSection');
+    dateSection.classList.remove('hidden');
+    
+    // Vrátíme text tlačítka
+    document.getElementById('btnText').textContent = 'Odeslat registraci';
+    
+    // Přidáme required atributy zpět
+    document.getElementById('datum').setAttribute('required', '');
+    document.getElementById('cas').setAttribute('required', '');
+    document.getElementById('misto').setAttribute('required', '');
+}
 
-    function handleOtherOption(event, fieldId) {
-        var selectElement = event.target;
-        var otherDiv = document.getElementById(fieldId + '_other');
-        var otherTextarea = document.getElementById(fieldId + '_text');
+// Funkce pro změnu datumu
+function onDateChange() {
+    const selectedDate = document.getElementById('datum').value;
+    const casSelect = document.getElementById('cas');
+    const mistoSelect = document.getElementById('misto');
+    
+    if (!selectedDate) {
+        resetTimeAndPlace();
+        return;
+    }
+    
+    // Získáme vybranou option pro kontrolu auto-fill
+    const selectedOption = document.querySelector('#datum option[value="' + selectedDate + '"]');
+    const autoFill = selectedOption ? selectedOption.getAttribute('data-auto-fill') === 'true' : false;
+    
+    if (autoFill) {
+        // Automatické vyplnění času a případně místa
+        const autoTime = selectedOption.getAttribute('data-time');
+        const autoPlace = selectedOption.getAttribute('data-place');
         
-        if (!otherDiv || !otherTextarea) {
-            console.error('Prvky pro "jiné" odpovědi nebyly nalezeny pro pole ' + fieldId);
-            return;
-        }
+        casSelect.innerHTML = `<option value="${autoTime}">${autoTime}</option>`;
+        casSelect.value = autoTime;
+        casSelect.disabled = true;
         
-        if (selectElement.value === 'Jiné') {
-            otherDiv.classList.add('show');
-            otherTextarea.required = true;
-            
-            otherTextarea.addEventListener('input', checkFormValidity);
-            otherTextarea.addEventListener('blur', function() {
-                validateField(otherTextarea);
-            });
-            
-            setTimeout(function() {
-                try {
-                    otherTextarea.focus();
-                } catch (e) {
-                    console.log('Focus se nezdařil:', e);
-                }
-            }, 300);
-            
-            console.log('Zobrazeno pole pro vlastní odpověď: ' + fieldId);
+        if (autoPlace) {
+            // Jedno místo - automatické vyplnění
+            mistoSelect.innerHTML = `<option value="${autoPlace}">${autoPlace}</option>`;
+            mistoSelect.value = autoPlace;
+            mistoSelect.disabled = true;
         } else {
-            otherDiv.classList.remove('show');
-            otherTextarea.required = false;
-            otherTextarea.value = '';
-            otherTextarea.classList.remove('invalid', 'valid');
-            
-            console.log('Skryto pole pro vlastní odpověď: ' + fieldId);
+            // Více míst - načteme je
+            loadPlacesForDateTime(selectedDate, autoTime);
         }
-        
-        checkFormValidity();
+    } else {
+        // Více termínů - načteme časy
+        loadTimesForDate(selectedDate);
     }
+}
 
-    function validateField(field) {
-        if (!field) return false;
-        
-        var fieldId = field.id;
-        var isValid = true;
-        
-        if (field.required) {
-            if (field.type === 'email') {
-                var emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-                isValid = field.value.trim() !== '' && emailRegex.test(field.value);
-            } else if (field.tagName === 'SELECT') {
-                isValid = field.value !== '';
+// Funkce pro změnu času
+function onTimeChange() {
+    const selectedDate = document.getElementById('datum').value;
+    const selectedTime = document.getElementById('cas').value;
+    
+    if (!selectedDate || !selectedTime) {
+        resetPlace();
+        return;
+    }
+    
+    loadPlacesForDateTime(selectedDate, selectedTime);
+}
+
+// Načtení časů pro vybraný termín (pouze pro případy s více termíny)
+function loadTimesForDate(selectedDate) {
+    const casSelect = document.getElementById('cas');
+    const mistoSelect = document.getElementById('misto');
+    
+    // Resetujeme čas a místo
+    casSelect.innerHTML = '<option value="">-- Načítání... --</option>';
+    casSelect.disabled = true;
+    resetPlace();
+    
+    google.script.run
+        .withSuccessHandler(function(timesResult) {
+            if (Array.isArray(timesResult)) {
+                // Více termínů - zobrazit výběr času
+                casSelect.innerHTML = '<option value="">-- Vyberte čas --</option>';
+                timesResult.forEach(function(time) {
+                    const option = document.createElement('option');
+                    option.value = time;
+                    option.textContent = time;
+                    casSelect.appendChild(option);
+                });
+                casSelect.disabled = false;
             } else {
-                isValid = field.value.trim() !== '';
-            }
-        }
-        
-        if (fieldId.indexOf('_text') !== -1) {
-            var mainFieldId = fieldId.replace('_text', '');
-            var mainField = document.getElementById(mainFieldId);
-            if (mainField && mainField.value === 'Jiné') {
-                isValid = field.value.trim() !== '';
-            }
-        }
-        
-        if (field.required || fieldId.indexOf('_text') !== -1) {
-            if (isValid) {
-                field.classList.remove('invalid');
-                field.classList.add('valid');
-            } else {
-                field.classList.remove('valid');
-                field.classList.add('invalid');
-            }
-        }
-        
-        return isValid;
-    }
-
-    function checkFormValidity() {
-        if (isLoading) return false;
-
-        var submitBtn = document.getElementById('submitBtn');
-        if (!submitBtn) return false;
-
-        var isValid = false;
-        
-        if (isInterestOnlyMode) {
-            var requiredFields = ['jmeno', 'prijmeni', 'telefon', 'mail', 'docasna_ochrana', 'registrace', 'prace'];
-            isValid = validateRequiredFields(requiredFields);
-        } else {
-            var requiredFields = ['jmeno', 'prijmeni', 'telefon', 'mail', 'docasna_ochrana', 'registrace', 'prace', 'datum', 'cas', 'misto'];
-            isValid = validateRequiredFields(requiredFields);
-        }
-        
-        if (isValid) {
-            submitBtn.disabled = false;
-            submitBtn.classList.add('active');
-        } else {
-            submitBtn.disabled = true;
-            submitBtn.classList.remove('active');
-        }
-        
-        return isValid;
-    }
-
-    function validateRequiredFields(fieldIds) {
-        for (var i = 0; i < fieldIds.length; i++) {
-            var fieldId = fieldIds[i];
-            var field = document.getElementById(fieldId);
-            if (!field) continue;
-            
-            if (!field.value.trim()) return false;
-            
-            if (['docasna_ochrana', 'registrace', 'prace'].indexOf(fieldId) !== -1 && field.value === 'Jiné') {
-                var otherField = document.getElementById(fieldId + '_text');
-                if (!otherField || !otherField.value.trim()) return false;
-            }
-            
-            if (field.type === 'email') {
-                var emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-                if (!emailRegex.test(field.value)) return false;
-            }
-        }
-        
-        return true;
-    }
-
-    function loadAvailableDates() {
-        var datumSelect = document.getElementById('datum');
-        if (!datumSelect) return;
-
-        datumSelect.innerHTML = '<option value="">-- Načítání... --</option>';
-        showLoading(true);
-        
-        console.log('Načítání dostupných termínů...');
-        
-        googleAPI.script.run
-            .withSuccessHandler(function(datesWithDetails) {
-                showLoading(false);
-                console.log('Načtené termíny:', datesWithDetails);
-                
-                if (!datesWithDetails || datesWithDetails.length === 0) {
-                    console.log('Žádné termíny nejsou dostupné, přepínám na režim zájmu');
-                    switchToInterestOnlyMode();
-                } else {
-                    console.log('Termíny jsou dostupné, přepínám na plný režim');
-                    switchToFullMode();
-                    populateDateSelect(datesWithDetails);
-                }
-                checkFormValidity();
-            })
-            .withFailureHandler(function(error) {
-                showLoading(false);
-                console.error('Chyba při načítání termínů:', error);
-                datumSelect.innerHTML = '<option value="">-- Chyba při načítání --</option>';
-                showError('Nepodařilo se načíst dostupné termíny. Zkuste obnovit stránku.');
-            })
-            .getAvailableDates();
-    }
-
-    function populateDateSelect(datesWithDetails) {
-        var datumSelect = document.getElementById('datum');
-        if (!datumSelect) return;
-
-        datumSelect.innerHTML = '<option value="">-- Vyberte datum --</option>';
-        
-        for (var i = 0; i < datesWithDetails.length; i++) {
-            var dateObj = datesWithDetails[i];
-            var option = document.createElement('option');
-            option.value = dateObj.date;
-            option.textContent = dateObj.date;
-            option.setAttribute('data-auto-fill', dateObj.autoFill);
-            
-            if (dateObj.autoFill) {
-                option.setAttribute('data-time', dateObj.time);
-                if (dateObj.place) {
-                    option.setAttribute('data-place', dateObj.place);
-                }
-            }
-            
-            datumSelect.appendChild(option);
-        }
-        
-        console.log('Select s daty byl naplněn');
-    }
-
-    function switchToInterestOnlyMode() {
-        isInterestOnlyMode = true;
-        
-        var header = document.getElementById('formHeader');
-        var dateSection = document.getElementById('dateSection');
-        
-        if (header) header.classList.add('orange');
-        if (dateSection) dateSection.classList.add('hidden');
-        
-        updateHeaderTexts(
-            'Реєстрація зацікавленої особи щодо участі у проєкті',
-            'Наразі не заплановано проведення групової інформаційної зустрічі. Якщо ви зацікавлені в участі у проєкті, заповніть наведені нижче дані, і ми з вами зв'яжемося.'
-        );
-        
-        var fields = ['datum', 'cas', 'misto'];
-        for (var i = 0; i < fields.length; i++) {
-            var field = document.getElementById(fields[i]);
-            if (field) field.removeAttribute('required');
-        }
-        
-        console.log('Přepnuto na režim zájmu o kontakt');
-    }
-
-    function switchToFullMode() {
-        isInterestOnlyMode = false;
-        
-        var header = document.getElementById('formHeader');
-        var dateSection = document.getElementById('dateSection');
-        
-        if (header) header.classList.remove('orange');
-        if (dateSection) dateSection.classList.remove('hidden');
-        
-        updateHeaderTexts(
-            'Реєстрація на інформаційну зустріч',
-            'Projekt: Podpora zapojení osob ukrajinské národnosti na trhu práce II'
-        );
-        
-        var fields = ['datum', 'cas', 'misto'];
-        for (var i = 0; i < fields.length; i++) {
-            var field = document.getElementById(fields[i]);
-            if (field) field.setAttribute('required', '');
-        }
-        
-        console.log('Přepnuto na plný režim s výběrem termínů');
-    }
-
-    function updateHeaderTexts(title, subtitle) {
-        var titleElement = document.getElementById('headerTitle');
-        var subtitleElement = document.getElementById('headerSubtitle');
-        
-        if (titleElement) titleElement.textContent = title;
-        if (subtitleElement) subtitleElement.textContent = subtitle;
-    }
-
-    function onDateChange() {
-        var selectedDate = document.getElementById('datum').value;
-        var casSelect = document.getElementById('cas');
-        var mistoSelect = document.getElementById('misto');
-        
-        if (!selectedDate) {
-            resetTimeAndPlace();
-            checkFormValidity();
-            return;
-        }
-        
-        console.log('Vybrané datum:', selectedDate);
-        
-        var selectedOption = document.querySelector('#datum option[value="' + selectedDate + '"]');
-        var autoFill = selectedOption ? selectedOption.getAttribute('data-auto-fill') === 'true' : false;
-        
-        if (autoFill) {
-            var autoTime = selectedOption.getAttribute('data-time');
-            var autoPlace = selectedOption.getAttribute('data-place');
-            
-            if (casSelect) {
-                casSelect.innerHTML = '<option value="' + autoTime + '">' + autoTime + '</option>';
-                casSelect.value = autoTime;
+                // Jeden termín - automatické vyplnění (toto by se nemělo stát díky nové logice)
+                casSelect.innerHTML = `<option value="${timesResult.autoFillTime}">${timesResult.autoFillTime}</option>`;
+                casSelect.value = timesResult.autoFillTime;
                 casSelect.disabled = true;
+                
+                if (timesResult.autoFillPlace) {
+                    mistoSelect.innerHTML = `<option value="${timesResult.autoFillPlace}">${timesResult.autoFillPlace}</option>`;
+                    mistoSelect.value = timesResult.autoFillPlace;
+                    mistoSelect.disabled = true;
+                } else {
+                    loadPlacesForDateTime(selectedDate, timesResult.autoFillTime);
+                }
             }
-            
-            if (autoPlace && mistoSelect) {
-                mistoSelect.innerHTML = '<option value="' + autoPlace + '">' + autoPlace + '</option>';
-                mistoSelect.value = autoPlace;
+        })
+        .withFailureHandler(function(error) {
+            console.error('Chyba při načítání časů:', error);
+            casSelect.innerHTML = '<option value="">-- Chyba při načítání --</option>';
+            showError('Nepodařilo se načíst dostupné časy pro vybraný termín.');
+        })
+        .getTimesForDate(selectedDate);
+}
+
+// Načtení míst pro vybraný termín a čas
+function loadPlacesForDateTime(selectedDate, selectedTime) {
+    const mistoSelect = document.getElementById('misto');
+    
+    // Resetujeme a zakážeme select místa
+    mistoSelect.innerHTML = '<option value="">-- Načítání... --</option>';
+    mistoSelect.disabled = true;
+    
+    google.script.run
+        .withSuccessHandler(function(places) {
+            if (places.length === 1) {
+                // Pouze jedno místo - automatické vyplnění
+                mistoSelect.innerHTML = `<option value="${places[0]}">${places[0]}</option>`;
+                mistoSelect.value = places[0];
                 mistoSelect.disabled = true;
             } else {
-                loadPlacesForDateTime(selectedDate, autoTime);
+                // Více míst - zobrazit výběr
+                mistoSelect.innerHTML = '<option value="">-- Vyberte místo --</option>';
+                places.forEach(function(place) {
+                    const option = document.createElement('option');
+                    option.value = place;
+                    option.textContent = place;
+                    mistoSelect.appendChild(option);
+                });
+                mistoSelect.disabled = false;
             }
-        } else {
-            loadTimesForDate(selectedDate);
-        }
-        
-        checkFormValidity();
-    }
+        })
+        .withFailureHandler(function(error) {
+            console.error('Chyba při načítání míst:', error);
+            mistoSelect.innerHTML = '<option value="">-- Chyba při načítání --</option>';
+            showError('Nepodařilo se načíst dostupná místa pro vybraný termín a čas.');
+        })
+        .getPlacesForDateTime(selectedDate, selectedTime);
+}
 
-    function onTimeChange() {
-        var selectedDate = document.getElementById('datum').value;
-        var selectedTime = document.getElementById('cas').value;
-        
-        if (!selectedDate || !selectedTime) {
-            resetPlace();
-            checkFormValidity();
-            return;
-        }
-        
-        console.log('Vybraný čas:', selectedTime);
-        loadPlacesForDateTime(selectedDate, selectedTime);
-    }
-
-    function loadTimesForDate(selectedDate) {
-        var casSelect = document.getElementById('cas');
-        var mistoSelect = document.getElementById('misto');
-        
-        if (!casSelect) return;
-        
-        casSelect.innerHTML = '<option value="">-- Načítání... --</option>';
-        casSelect.disabled = true;
-        resetPlace();
-        
-        googleAPI.script.run
-            .withSuccessHandler(function(timesResult) {
-                if (Array.isArray(timesResult)) {
-                    casSelect.innerHTML = '<option value="">-- Vyberte čas --</option>';
-                    for (var i = 0; i < timesResult.length; i++) {
-                        var option = document.createElement('option');
-                        option.value = timesResult[i];
-                        option.textContent = timesResult[i];
-                        casSelect.appendChild(option);
-                    }
-                    casSelect.disabled = false;
-                } else if (timesResult && timesResult.autoFillTime) {
-                    casSelect.innerHTML = '<option value="' + timesResult.autoFillTime + '">' + timesResult.autoFillTime + '</option>';
-                    casSelect.value = timesResult.autoFillTime;
-                    casSelect.disabled = true;
-                    
-                    if (timesResult.autoFillPlace && mistoSelect) {
-                        mistoSelect.innerHTML = '<option value="' + timesResult.autoFillPlace + '">' + timesResult.autoFillPlace + '</option>';
-                        mistoSelect.value = timesResult.autoFillPlace;
-                        mistoSelect.disabled = true;
-                    } else {
-                        loadPlacesForDateTime(selectedDate, timesResult.autoFillTime);
-                    }
-                }
-                checkFormValidity();
-            })
-            .withFailureHandler(function(error) {
-                console.error('Chyba při načítání časů:', error);
-                casSelect.innerHTML = '<option value="">-- Chyba při načítání --</option>';
-                showError('Nepodařilo se načíst dostupné časy pro vybraný termín.');
-            })
-            .getTimesForDate(selectedDate);
-    }
-
-    function loadPlacesForDateTime(selectedDate, selectedTime) {
-        var mistoSelect = document.getElementById('misto');
-        if (!mistoSelect) return;
-        
-        mistoSelect.innerHTML = '<option value="">-- Načítání... --</option>';
-        mistoSelect.disabled = true;
-        
-        googleAPI.script.run
-            .withSuccessHandler(function(places) {
-                if (places && places.length === 1) {
-                    mistoSelect.innerHTML = '<option value="' + places[0] + '">' + places[0] + '</option>';
-                    mistoSelect.value = places[0];
-                    mistoSelect.disabled = true;
-                } else if (places && places.length > 1) {
-                    mistoSelect.innerHTML = '<option value="">-- Vyberte místo --</option>';
-                    for (var i = 0; i < places.length; i++) {
-                        var option = document.createElement('option');
-                        option.value = places[i];
-                        option.textContent = places[i];
-                        mistoSelect.appendChild(option);
-                    }
-                    mistoSelect.disabled = false;
-                } else {
-                    mistoSelect.innerHTML = '<option value="">-- Žádná místa k dispozici --</option>';
-                }
-                checkFormValidity();
-            })
-            .withFailureHandler(function(error) {
-                console.error('Chyba při načítání míst:', error);
-                mistoSelect.innerHTML = '<option value="">-- Chyba při načítání --</option>';
-                showError('Nepodařilo se načíst dostupná místa pro vybraný termín a čas.');
-            })
-            .getPlacesForDateTime(selectedDate, selectedTime);
-    }
-
-    function resetTimeAndPlace() {
-        var casSelect = document.getElementById('cas');
-        if (casSelect) {
-            casSelect.innerHTML = '<option value="">-- Nejprve vyberte datum --</option>';
-            casSelect.disabled = true;
-        }
-        resetPlace();
-    }
-
-    function resetPlace() {
-        var mistoSelect = document.getElementById('misto');
-        if (mistoSelect) {
-            mistoSelect.innerHTML = '<option value="">-- Nejprve vyberte čas --</option>';
-            mistoSelect.disabled = true;
-        }
-    }
-
-    function handleFormSubmit(e) {
-        e.preventDefault();
-        
-        if (isLoading) {
-            console.log('Formulář se již odesílá, ignoruji další pokus');
-            return;
-        }
-        
-        submitForm();
-    }
-
-    function submitForm() {
-        var form = document.getElementById('registrationForm');
-        var submitBtn = document.getElementById('submitBtn');
-        
-        if (!form || !submitBtn) return;
-        
-        if (!isInterestOnlyMode && !form.checkValidity()) {
-            form.reportValidity();
-            return;
-        }
-        
-        if (isInterestOnlyMode) {
-            var requiredFields = ['jmeno', 'prijmeni', 'telefon', 'mail', 'docasna_ochrana', 'registrace', 'prace'];
-            var isValid = true;
-            
-            for (var i = 0; i < requiredFields.length; i++) {
-                var fieldId = requiredFields[i];
-                var field = document.getElementById(fieldId);
-                if (!field || !field.value.trim()) {
-                    isValid = false;
-                    if (field) field.focus();
-                    break;
-                }
-                
-                if (field.value === 'Jiné') {
-                    var otherField = document.getElementById(fieldId + '_text');
-                    if (!otherField || !otherField.value.trim()) {
-                        isValid = false;
-                        if (otherField) otherField.focus();
-                        break;
-                    }
-                }
-            }
-            
-            if (!isValid) {
-                showError('Будь ласка, заповніть усі обов'язкові поля.');
-                return;
-            }
-        }
-        
-        setSubmitLoading(true);
-        hideMessages();
-        
-        var formData = collectFormData();
-        
-        console.log('Odesílání formuláře s daty:', formData);
-        
-        googleAPI.script.run
-            .withSuccessHandler(function(result) {
-                setSubmitLoading(false);
-                
-                if (result && result.success) {
-                    showSuccess();
-                } else {
-                    showError(result ? result.message : 'Neznámá chyba při registraci');
-                    checkFormValidity();
-                }
-            })
-            .withFailureHandler(function(error) {
-                setSubmitLoading(false);
-                console.error('Chyba při odesílání:', error);
-                showError('Došlo k neočekávané chybě. Zkuste to prosím znovu.');
-                checkFormValidity();
-            })
-            .saveRegistration(formData);
-    }
-
-    function collectFormData() {
-        return {
-            jmeno: getFieldValue('jmeno'),
-            prijmeni: getFieldValue('prijmeni'),
-            telefon: getFieldValue('telefon'),
-            mail: getFieldValue('mail'),
-            docasna_ochrana: getComplexFieldValue('docasna_ochrana'),
-            registrace: getComplexFieldValue('registrace'),
-            prace: getComplexFieldValue('prace'),
-            datum: isInterestOnlyMode ? '' : getFieldValue('datum'),
-            cas: isInterestOnlyMode ? '' : getFieldValue('cas'),
-            misto: isInterestOnlyMode ? '' : getFieldValue('misto')
-        };
-    }
-
-    function getFieldValue(fieldId) {
-        var field = document.getElementById(fieldId);
-        return field ? field.value.trim() : '';
-    }
-
-    function getComplexFieldValue(fieldId) {
-        var field = document.getElementById(fieldId);
-        if (!field) return '';
-        
-        if (field.value === 'Jiné') {
-            var otherField = document.getElementById(fieldId + '_text');
-            return 'Jiné: ' + (otherField ? otherField.value.trim() : '');
-        }
-        return field.value;
-    }
-
-    function setSubmitLoading(loading) {
-        isLoading = loading;
-        var submitBtn = document.getElementById('submitBtn');
-        var btnText = document.getElementById('btnText');
-        
-        if (!submitBtn || !btnText) return;
-        
-        if (loading) {
-            submitBtn.disabled = true;
-            submitBtn.classList.remove('active');
-            submitBtn.classList.add('btn-loading');
-            btnText.textContent = 'Odesílání...';
-        } else {
-            submitBtn.classList.remove('btn-loading');
-            btnText.textContent = 'Odeslat';
-        }
-    }
-
-    function showLoading(show) {
-        var overlay = document.getElementById('loadingOverlay');
-        if (overlay) {
-            overlay.style.display = show ? 'flex' : 'none';
-        }
-    }
-
-    function hideMessages() {
-        var successDiv = document.getElementById('successMessage');
-        var errorDiv = document.getElementById('errorMessage');
-        
-        if (successDiv) successDiv.style.display = 'none';
-        if (errorDiv) errorDiv.style.display = 'none';
-    }
-
-    function showError(message) {
-        var errorDiv = document.getElementById('errorMessage');
-        var errorText = document.getElementById('errorText');
-        
-        if (errorDiv && errorText) {
-            errorText.textContent = message;
-            errorDiv.style.display = 'block';
-            try {
-                errorDiv.scrollIntoView({ behavior: 'smooth', block: 'center' });
-            } catch (e) {
-                console.log('ScrollIntoView není podporováno');
-            }
-        }
-        
-        console.error('Zobrazena chyba: ' + message);
-    }
-
-    function showSuccess() {
-        var successDiv = document.getElementById('successMessage');
-        var successTitle = document.getElementById('successTitle');
-        var successText = document.getElementById('successText');
-        var form = document.getElementById('registrationForm');
-        
-        if (!successDiv || !successTitle || !successText || !form) return;
-        
-        if (isInterestOnlyMode) {
-            successTitle.textContent = 'Інформацію було успішно надіслано!';
-            successText.textContent = 'Дякуємо за ваш інтерес. Ми з вами зв'яжемося найближчим часом.';
-        } else {
-            successTitle.textContent = 'Реєстрація була успішною!';
-            successText.textContent = 'На вашу електронну пошту було надіслано підтвердження з деталями зустрічі.';
-        }
-        
-        form.classList.add('hidden');
-        successDiv.style.display = 'block';
-        try {
-            successDiv.scrollIntoView({ behavior: 'smooth', block: 'center' });
-        } catch (e) {
-            console.log('ScrollIntoView není podporováno');
-        }
-        
-        console.log('Zobrazeno potvrzení úspěchu');
-    }
-
-    // Inicializace s maximální kompatibilitou
-    if (document.readyState === 'loading') {
-        document.addEventListener('DOMContentLoaded', initializeForm);
-    } else {
-        initializeForm();
-    }
-
-} catch (error) {
-    console.error('Kritická chyba v JavaScriptu:', error);
+// Reset času a místa
+function resetTimeAndPlace() {
+    const casSelect = document.getElementById('cas');
+    const mistoSelect = document.getElementById('misto');
     
-    // Minimální fallback pro zobrazení chyby
-    setTimeout(function() {
-        try {
-            var errorDiv = document.getElementById('errorMessage');
-            var errorText = document.getElementById('errorText');
-            if (errorDiv && errorText) {
-                errorText.textContent = 'Došlo k chybě při načítání formuláře. Zkuste obnovit stránku.';
-                errorDiv.style.display = 'block';
+    casSelect.innerHTML = '<option value="">-- Nejprve vyberte datum --</option>';
+    casSelect.disabled = true;
+    
+    resetPlace();
+}
+
+// Reset pouze místa
+function resetPlace() {
+    const mistoSelect = document.getElementById('misto');
+    
+    mistoSelect.innerHTML = '<option value="">-- Nejprve vyberte čas --</option>';
+    mistoSelect.disabled = true;
+}
+
+// Odeslání formuláře
+function submitForm() {
+    const form = document.getElementById('registrationForm');
+    const submitBtn = document.getElementById('submitBtn');
+    const btnText = submitBtn.querySelector('.btn-text');
+    const btnLoading = submitBtn.querySelector('.btn-loading');
+    
+    // Validace formuláře - pro zkrácený formulář přeskočíme validaci termínů
+    if (!isInterestOnlyMode && !form.checkValidity()) {
+        form.reportValidity();
+        return;
+    }
+    
+    // Pro zkrácený formulář validujeme pouze základní pole
+    if (isInterestOnlyMode) {
+        const requiredFields = ['jmeno', 'prijmeni', 'telefon', 'mail', 'docasna_ochrana', 'registrace', 'prace'];
+        let isValid = true;
+        
+        for (let fieldId of requiredFields) {
+            const field = document.getElementById(fieldId);
+            if (!field.value.trim()) {
+                isValid = false;
+                field.focus();
+                break;
             }
-        } catch (e) {
-            console.error('Nelze zobrazit chybovou zprávu:', e);
         }
-    }, 1000);
+        
+        if (!isValid) {
+            showError('Prosím vyplňte všechna povinná pole.');
+            return;
+        }
+    }
+    
+    // Zakážeme tlačítko a zobrazíme loading
+    submitBtn.disabled = true;
+    btnText.style.display = 'none';
+    btnLoading.style.display = 'inline-block';
+    
+    // Skryjeme předchozí zprávy
+    hideMessages();
+    
+    // Sebereme data z formuláře
+    const formData = {
+        jmeno: document.getElementById('jmeno').value.trim(),
+        prijmeni: document.getElementById('prijmeni').value.trim(),
+        telefon: document.getElementById('telefon').value.trim(),
+        mail: document.getElementById('mail').value.trim(),
+        docasna_ochrana: document.getElementById('docasna_ochrana').value,
+        registrace: document.getElementById('registrace').value,
+        prace: document.getElementById('prace').value,
+        datum: isInterestOnlyMode ? '' : document.getElementById('datum').value,
+        cas: isInterestOnlyMode ? '' : document.getElementById('cas').value,
+        misto: isInterestOnlyMode ? '' : document.getElementById('misto').value
+    };
+    
+    // Odešleme data
+    google.script.run
+        .withSuccessHandler(function(result) {
+            if (result.success) {
+                showSuccess();
+                form.reset();
+                if (!isInterestOnlyMode) {
+                    resetTimeAndPlace();
+                    loadAvailableDates(); // Znovu načteme termíny
+                }
+            } else {
+                showError(result.message);
+            }
+            resetSubmitButton();
+        })
+        .withFailureHandler(function(error) {
+            console.error('Chyba při odesílání:', error);
+            showError('Došlo k neočekávané chybě. Zkuste to prosím znovu.');
+            resetSubmitButton();
+        })
+        .saveRegistration(formData);
+}
+
+// Reset tlačítka po odeslání
+function resetSubmitButton() {
+    const submitBtn = document.getElementById('submitBtn');
+    const btnText = submitBtn.querySelector('.btn-text');
+    const btnLoading = submitBtn.querySelector('.btn-loading');
+    
+    submitBtn.disabled = false;
+    btnText.style.display = 'inline-block';
+    btnLoading.style.display = 'none';
+}
+
+// Zobrazení úspěšné zprávy - BEZ automatického návratu
+function showSuccess() {
+    const successDiv = document.getElementById('successMessage');
+    const successTitle = document.getElementById('successTitle');
+    const successText = document.getElementById('successText');
+    const form = document.getElementById('registrationForm');
+    
+    if (isInterestOnlyMode) {
+        successTitle.textContent = 'Zájem byl úspěšně odeslán!';
+        successText.textContent = 'Děkujeme za váš zájem. Na váš email byl odeslán potvrzovací email a my se vám brzy ozveme.';
+    } else {
+        successTitle.textContent = 'Registrace byla úspěšná!';
+        successText.textContent = 'Na váš email byl odeslán potvrzovací email s podrobnostmi o schůzce.';
+    }
+    
+    form.style.display = 'none';
+    successDiv.style.display = 'block';
+    
+    // Scroll nahoru
+    successDiv.scrollIntoView({ behavior: 'smooth', block: 'center' });
+    
+    // ODEBRÁN automatický návrat na formulář - hláška zůstane zobrazená
+}
+
+// Zobrazení chybové zprávy
+function showError(message) {
+    const errorDiv = document.getElementById('errorMessage');
+    const errorText = document.getElementById('errorText');
+    
+    errorText.textContent = message;
+    errorDiv.style.display = 'block';
+    
+    // Scroll k chybě
+    errorDiv.scrollIntoView({ behavior: 'smooth', block: 'center' });
+    
+    // Automaticky skryjeme po 8 sekundách
+    setTimeout(function() {
+        errorDiv.style.display = 'none';
+    }, 8000);
+}
+
+// Skrytí všech zpráv
+function hideMessages() {
+    document.getElementById('successMessage').style.display = 'none';
+    document.getElementById('errorMessage').style.display = 'none';
 }
     </script>
 </body>
 </html>
-
